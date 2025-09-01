@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nat Báez – Enlaces oficiales</title>
+  <meta name="description" content="Canales oficiales de contacto de Nat Báez.">
+  <style>
+    :root{
+      --navy:#0D2240;
+      --deep:#1E3A8A;
+      --bg:#F5F7FB;
+      --text:#111827;
+      --muted:#6B7280;
+      --white:#FFFFFF;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--navy),var(--deep));
+      color:var(--text);
+    }
+    .wrap{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{
+      width:100%;max-width:760px;background:var(--white);
+      border:1px solid #E5E7EB;border-radius:16px;padding:22px;box-shadow:0 12px 32px rgba(0,0,0,.08)
+    }
+    header{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+    .avatar{
+      width:56px;height:56px;border-radius:12px;background:var(--navy);
+      color:#fff;display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:20px;letter-spacing:.5px
+    }
+    h1{margin:0;font-size:22px}
+    p.lead{margin:6px 0 14px;color:var(--muted)}
+    .group-title{margin:16px 2px 6px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .grid{display:grid;gap:10px}
+    a.btn{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      text-decoration:none;border:1px solid #D1D5DB;border-radius:12px;
+      padding:14px 16px;color:var(--text);background:#fff;font-weight:600
+    }
+    a.btn:hover{border-color:#9CA3AF}
+    a.btn.primary{background:var(--navy);color:#fff;border-color:transparent}
+    footer{padding:16px 6px 10px;text-align:center;color:var(--muted);font-size:12px}
+    .small{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="card">
+      <header>
+        <div class="avatar">NB</div>
+        <div>
+          <h1>Nat Báez</h1>
+          <p class="lead">Enlaces oficiales para contactarme y conocer mis opciones.</p>
+        </div>
+      </header>
+
+      <div class="grid">
+        <!-- WhatsApp con mensaje precargado -->
+        <a class="btn primary" target="_blank" rel="noopener" 
+           href="https://wa.me/50769378318?text=Hola%20Nat%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20agua%20de%20calidad%20y%20opciones%20disponibles.">
+          📲 Escribirme por WhatsApp
+        </a>
+
+        <div class="group-title">Sitios</div>
+        <a class="btn" target="_blank" rel="noopener" href="https://prefierebienestar.mynikken.com">
+          🌐 Landing: prefierebienestar.mynikken.com
+        </a>
+        <a class="btn" target="_blank" rel="noopener" href="https://prefierebienestar.mitiendanikken.com">
+          🛒 Tienda: prefierebienestar.mitiendanikken.com
+        </a>
+
+        <div class="group-title">Redes</div>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/nat_baez_prefierebienestar">
+          📷 Instagram: @nat_baez_prefierebienestar
+        </a>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.tiktok.com/@panamanatsnkn">
+          🎵 TikTok: @panamanatsnkn
+        </a>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.facebook.com/nat_baez_prefierebienestar">
+          👍 Facebook: nat_baez_prefierebienestar
+        </a>
+
+        <div class="group-title">Correo</div>
+        <a class="btn" href="mailto:nataliabaez@yahoo.com?subject=Consulta%20filtros%20de%20agua&body=Hola%20Nat%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n.">
+          ✉️ nataliabaez@yahoo.com
+        </a>
+
+        <p class="small">
+          *Contenido informativo. Sin promesas médicas. Cumple con las guías de comunicación de la compañía.
+        </p>
+      </div>
+
+      <footer>© <span id="y"></span> Nat Báez</footer>
+    </main>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
