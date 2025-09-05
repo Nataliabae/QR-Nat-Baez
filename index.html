@@ -12,6 +12,11 @@
     --blue:#1E3A8A;
     --white:#fff;
     --glass:rgba(255,255,255,.12);
+    /* Brand colors */
+    --wa:#25D366;        /* WhatsApp */
+    --ig:#E1306C;        /* Instagram (magenta) */
+    --tt:#69C9D0;        /* TikTok (cyan) */
+    --fb:#1877F2;        /* Facebook */
   }
   *{box-sizing:border-box}
   html,body{height:100%}
@@ -30,7 +35,7 @@
 
   .wrap{min-height:100%; display:grid; place-items:center; padding:28px}
   .card{
-    width:100%; max-width:420px; position:relative;
+    width:100%; max-width:460px; position:relative;
     backdrop-filter: blur(8px);
     background: linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.10));
     border:1px solid rgba(255,255,255,.25);
@@ -41,76 +46,113 @@
   }
   @keyframes rise{from{transform:translateY(8px); opacity:.0} to{transform:translateY(0); opacity:1}}
 
-  /* Foto */
+  /* Foto + anillo detrás */
   .avatar-wrap{
     width:132px; height:132px; margin:0 auto 14px; position:relative;
   }
   .ring{
-    position:absolute; inset:-8px; border-radius:50%;
-    background:conic-gradient(from 180deg, #fff 0deg, #7ea6ff 120deg, #fff 240deg, #7ea6ff 360deg);
+    position:absolute; inset:-10px; border-radius:50%;
+    background:conic-gradient(from 180deg, #ffffff 0deg, #7ea6ff 120deg, #ffffff 240deg, #7ea6ff 360deg);
     filter:blur(0.6px); animation: spin 6s linear infinite;
-    opacity:.65;
+    opacity:.65; z-index:0; pointer-events:none;
   }
   @keyframes spin{to{transform:rotate(360deg)}}
   .avatar{
+    position:relative; z-index:1;
     width:100%; height:100%; border-radius:50%; object-fit:cover; display:block;
     border:4px solid var(--navy); background:#ddd;
   }
 
   h1{font-size:26px; margin:10px 0 4px}
-  .subtitle{margin:0 0 14px; font-weight:600; letter-spacing:.2px; color:#dbe7ff}
+  .subtitle{margin:0 0 18px; font-weight:600; letter-spacing:.2px; color:#dbe7ff}
 
+  /* Botones base */
   .btn{
     display:flex; align-items:center; justify-content:center; gap:10px;
     width:100%; padding:14px 16px; margin:10px 0;
-    text-decoration:none; color:var(--navy); background:var(--white);
-    border-radius:14px; font-weight:700; transition:transform .12s ease, box-shadow .12s ease;
+    text-decoration:none; border-radius:14px; font-weight:700;
+    transition:transform .12s ease, box-shadow .12s ease, filter .12s ease;
     box-shadow:0 6px 14px rgba(0,0,0,.15);
   }
   .btn:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,.22)}
   .btn:active{transform:translateY(0)}
+  .i{font-style:normal}
 
-  .grid{margin-top:8px}
+  /* WhatsApp (verde) */
+  .btn-wa{background:var(--wa); color:#fff}
+
+  /* DUALES: Landing + Tienda (blancos) */
+  .duo{
+    display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:10px 0;
+  }
+  .btn-white{background:#fff; color:#111; border:1px solid #e6e8ef}
+
+  /* Redes en fila (3 iguales) */
+  .tri{
+    display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:10px 0;
+  }
+  .btn-ig{background:var(--ig); color:#fff}
+  .btn-tt{background:var(--tt); color:#0c1b2b}
+  .btn-fb{background:var(--fb); color:#fff}
+
+  /* Email blanco */
+  .btn-mail{background:#fff; color:#111; border:1px solid #e6e8ef}
+
   .note{font-size:12px; color:#e5ecff; margin-top:14px; opacity:.85}
   footer{margin-top:4px; font-size:11px; color:#d4dcff; opacity:.85}
-  .i{font-style:normal}
+
+  /* Responsive */
+  @media (max-width:440px){
+    .duo{grid-template-columns:1fr}
+    .tri{grid-template-columns:1fr}
+  }
 </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card" aria-label="Tarjeta digital de contacto">
-      <!-- FOTO: usa la que subiste al repo -->
+      <!-- FOTO -->
       <div class="avatar-wrap" aria-hidden="true">
         <div class="ring"></div>
+        <!-- Cambia el nombre si tu foto tiene otro nombre -->
         <img src="IMG_1882.jpeg" class="avatar" alt="Foto de Nat Báez">
       </div>
 
       <h1>Nat Báez</h1>
       <p class="subtitle">Prefiere Agua de Calidad</p>
 
-      <div class="grid">
-        <a class="btn" href="https://wa.me/50769378318?text=Hola%20Nat%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20opciones%20de%20agua%20de%20calidad." target="_blank" rel="noopener">
-          <span class="i">📲</span> Escribirme por WhatsApp
+      <!-- WhatsApp -->
+      <a class="btn btn-wa" href="https://wa.me/50769378318?text=Hola%20Nat%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20opciones%20de%20agua%20de%20calidad." target="_blank" rel="noopener">
+        <span class="i">🟢</span> WhatsApp
+      </a>
+
+      <!-- Landing + Tienda (duo blanco) -->
+      <div class="duo">
+        <a class="btn btn-white" href="https://prefierebienestar.mynikken.com" target="_blank" rel="noopener">
+          🌐 Landing
         </a>
-        <a class="btn" href="https://prefierebienestar.mynikken.com" target="_blank" rel="noopener">
-          <span class="i">🌐</span> Landing: prefierebienestar.mynikken.com
-        </a>
-        <a class="btn" href="https://prefierebienestar.mitiendanikken.com" target="_blank" rel="noopener">
-          <span class="i">🛒</span> Tienda: prefierebienestar.mitiendanikken.com
-        </a>
-        <a class="btn" href="https://www.instagram.com/nat_baez_prefierebienestar" target="_blank" rel="noopener">
-          <span class="i">📷</span> Instagram
-        </a>
-        <a class="btn" href="https://www.tiktok.com/@panamanatsnkn" target="_blank" rel="noopener">
-          <span class="i">🎵</span> TikTok
-        </a>
-        <a class="btn" href="https://www.facebook.com/nat_baez_prefierebienestar" target="_blank" rel="noopener">
-          <span class="i">👍</span> Facebook
-        </a>
-        <a class="btn" href="mailto:nataliabaez@yahoo.com?subject=Consulta&body=Hola%20Nat%2C%20quisiera%20informaci%C3%B3n." >
-          <span class="i">✉️</span> nataliabaez@yahoo.com
+        <a class="btn btn-white" href="https://prefierebienestar.mitiendanikken.com" target="_blank" rel="noopener">
+          🛒 Tienda
         </a>
       </div>
+
+      <!-- Redes (3 en fila con colores de marca) -->
+      <div class="tri">
+        <a class="btn btn-ig" href="https://www.instagram.com/nat_baez_prefierebienestar" target="_blank" rel="noopener">
+          📷 Instagram
+        </a>
+        <a class="btn btn-tt" href="https://www.tiktok.com/@panamanatsnkn" target="_blank" rel="noopener">
+          🎵 TikTok
+        </a>
+        <a class="btn btn-fb" href="https://facebook.com/PrefiereBienestar" target="_blank" rel="noopener">
+          👍 Facebook
+        </a>
+      </div>
+
+      <!-- Email blanco -->
+      <a class="btn btn-mail" href="mailto:nataliabaez@yahoo.com?subject=Consulta&body=Hola%20Nat%2C%20quisiera%20informaci%C3%B3n.">
+        ✉️ nataliabaez@yahoo.com
+      </a>
 
       <p class="note">Contenido informativo. Evito promesas médicas y sigo las guías oficiales.</p>
       <footer>© <span id="y"></span> Nat Báez</footer>
